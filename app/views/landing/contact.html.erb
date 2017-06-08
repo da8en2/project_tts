@@ -1,0 +1,71 @@
+<body class="contact_body">
+
+  <div class="contact_page">
+
+    <div class="title">Contact Me</div>
+
+      <div class="contact_form_container">
+
+        <div class="form-area">
+
+          <%= form_tag '/send_contact_email', method: 'post' do %>
+
+            <br style="clear:both">
+
+            <h3 style="margin-bottom: 25px; text-align: center;"> <i class="fa fa-envelope-o fa-border "></i> Send me a message</h3>
+
+            <div class="form-group">
+               <%= text_field_tag :name, nil, placeholder: "Name", :required => true, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+               <%= email_field_tag :email, nil, placeholder: "E-mail", :required => true, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+               <%= text_field_tag :phone, nil, placeholder: "Phone (optional)", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+               <%= text_field_tag :subject, nil, placeholder: "Subject", :required => true, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+               <%= text_area_tag :message, nil, :rows => 7, placeholder: "Message", :required => true, :maxlength => 350, id: "message", class: "form-control" %>
+               <span class="help-block">
+                 <p id="characterLeft" class="help-block ">...</p>
+               </span>
+            </div>
+
+            <div class="actions">
+              <%= submit_tag "Send Message", class: "btn btn-primary pull-right" %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+  </div>
+
+
+  <script>
+  $(document).ready(function(){
+      $('#characterLeft').text('350 characters left');
+      $('#message').keydown(function () {
+          var max = 350;
+          var len = $(this).val().length;
+          if (len >= max) {
+              $('#characterLeft').text('You have reached the limit');
+              $('#characterLeft').addClass('red');
+              $('#btnSubmit').addClass('disabled');
+          }
+          else {
+              var ch = max - len;
+              $('#characterLeft').text(ch + ' characters left');
+              $('#btnSubmit').removeClass('disabled');
+              $('#characterLeft').removeClass('red');
+          }
+      });
+  });
+  </script>
+
+</body>

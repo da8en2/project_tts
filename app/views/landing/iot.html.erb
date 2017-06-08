@@ -1,0 +1,127 @@
+<body class="home_body">
+
+  <div class="iot_container">
+
+    <div class="title">My IoT Projects</div>
+
+
+      <div class="iot_subtitle alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            This page displays a live view of the current values of IoT Sensors that I build using ESP8266 / Arduino Devices.
+      </div>
+
+      <div class="iot_projects_container">
+
+        <div class="row">
+
+          <div class="col-md-6 well" data-toggle="modal" data-target="#indoor_temperature_modal">
+              <i class="fa fa-thermometer-half fa-2x" aria-hidden="true"></i>
+              &nbsp;Indoor Temperature is currently <%= @downstairs_temp %>°F.
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="indoor_temperature_modal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Indoor Temperature & Humidity Sensor</h4>
+                </div>
+                <div class="modal-body">
+                  <p>An ESP8266 / Nodemcu device is used to sense the Temperature and Humidity using a DHT22 Sensor.</p>
+                  <p>Sensor value last refreshed at <%= @poll_time %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+            <!-- End Modal -->
+
+          <div class="col-md-6 well" data-toggle="modal" data-target="#indoor_temperature_modal">
+              <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+              &nbsp;Indoor Humidity is currently <%= @downstairs_humidity %>%.
+          </div>
+
+        </div>
+
+        <div class="row">
+
+
+          <div class="col-md-6 well" data-toggle="modal" data-target="#garagedoor_modal">
+              <i class="fa fa-car fa-2x" aria-hidden="true"></i>
+              &nbsp;Garage Door is currently <%= @garagedoor %>
+          </div>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="garagedoor_modal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Garagedoor Sensor</h4>
+                </div>
+                <div class="modal-body">
+                  <p>An ESP8266 / Nodemcu device is used to sense the current status of the garage door.</p>
+                  <p>Sensor value last refreshed at <%= @poll_time %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+            <!-- End Modal -->
+
+
+          <div class="col-md-6 well" data-toggle="modal" data-target="#pool_temperature_modal">
+              <i class="fa fa-thermometer-full fa-2x" aria-hidden="true"></i>
+              &nbsp;Pool Temperature is currently <%= @pool_temperature %>°F.
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="pool_temperature_modal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Pool Temperature Sensor</h4>
+                </div>
+                <div class="modal-body">
+                  <p>An ESP8266 / Nodemcu device is used to sense the Temperature of the Pool.</p>
+                  <p>Sensor value last refreshed at <%= @poll_time %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+            <!-- End Modal -->
+
+        </div>
+
+      </div>
+
+
+
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+</body>

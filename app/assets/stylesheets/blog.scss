@@ -1,0 +1,36 @@
+.blog_title {
+  text-align: center;
+}
+
+.blog_posts_container {
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog_posts_container .blog_post .blog_post_entry {
+  margin: 20px 0;
+  text-indent: 30px;
+}
+
+.blog_post_title {
+  font-size: 55px;
+}
+
+.panel-heading .blog_post_title {
+ font-size: 24px;
+}
+
+.blog_post_entry img {
+  max-width: 600px;
+}
+
+.blog_posts_container .blog_post .blog_post_comment {
+  margin: 0px 20px;
+  font-style: italic;
+  color: black;
+}
+
+.comments-body {
+  background-color: #FEFEF5;
+}

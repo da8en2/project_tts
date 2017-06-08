@@ -1,0 +1,18 @@
+
+default: &default
+development:
+  adapter: postgresql
+  host: localhost
+  database: dan
+  encoding: UTF8
+
+test:
+  adapter: postgresql
+  host: localhost
+  database: dan        # or whatever the name is
+  encoding: UTF8
+
+production:
+  adapter: postgresql
+  database: dan
+  encoding: UTF8
